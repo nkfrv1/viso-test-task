@@ -7,6 +7,7 @@ import {
     Post,
 } from '@nestjs/common';
 import { RowsService } from './rows.service';
+import { SpreadsheetUpdatePayloadDto } from './dto/spreadsheet-update-payload.dto';
 
 @Controller('rows')
 export class RowsController {
@@ -23,7 +24,7 @@ export class RowsController {
     }
 
     @Post('webhook')
-    handleWebhook(@Body() payload: any) {
-        return this.rowsService.handleWebhook(payload);
+    handleSpreadsheetUpdate(@Body() payload: SpreadsheetUpdatePayloadDto) {
+        return this.rowsService.handleSpreadsheetUpdate(payload);
     }
 }
