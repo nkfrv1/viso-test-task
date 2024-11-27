@@ -1,3 +1,4 @@
+import { ApiPropertyOptional } from '@nestjs/swagger';
 import {
     IsArray,
     IsNotEmpty,
@@ -23,14 +24,17 @@ export class SpreadsheetUpdatePayloadDto {
     @IsNotEmpty()
     columnEnd: number;
 
+    @ApiPropertyOptional()
     @IsString()
     @IsOptional()
     value: string;
 
+    @ApiPropertyOptional()
     @IsString()
     @IsOptional()
     oldValue: string;
 
+    @ApiPropertyOptional()
     @IsString()
     @IsOptional()
     userEmail: string;
