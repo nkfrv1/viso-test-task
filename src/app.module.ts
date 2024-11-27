@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RowsModule } from './rows/rows.module';
+import { NotificationsModule } from './notifications/notifications.module';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
@@ -21,6 +22,7 @@ import { resolve } from 'node:path';
             }),
         }),
         RowsModule,
+        NotificationsModule,
     ],
     controllers: [AppController],
     providers: [AppService],
